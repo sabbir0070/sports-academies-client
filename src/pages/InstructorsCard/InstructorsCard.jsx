@@ -1,6 +1,7 @@
 import React from 'react';
 
-const InstructorsCard = () => {
+const InstructorsCard = ({instructor}) => {
+const {image,name,email} = instructor;
   return (
   <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
@@ -10,7 +11,7 @@ const InstructorsCard = () => {
     <h2 className="card-title">Name: {name}</h2>
     <p>Email: {email}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Favorite</button>
+      <button className="btn btn-primary">See Classes</button>
     </div>
   </div>
 </div>

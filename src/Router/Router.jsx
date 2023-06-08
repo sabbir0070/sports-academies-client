@@ -7,35 +7,62 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Instructors from "../pages/Instructors/Instructors";
 import AllClasses from "../pages/AllClasses/AllClasses";
+import DashboardLayout from "../LayOut/Dashboard";
+import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import MyEnrolledClasses from "../pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-children: [
-{
-path:'/',
-element:<Home></Home>
-},
-{
-path:'login',
-element:<Login></Login>
-},
-{
-path:'register',
-element:<Register></Register>
-},
-{
-path:'instructors',
-element:<Instructors></Instructors>
-},
-{
-path:'allClasses',
-element:<AllClasses></AllClasses>
-},
-
-]
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      },
+      {
+        path: 'instructors',
+        element: <Instructors></Instructors>
+      },
+      {
+        path: 'allClasses',
+        element: <AllClasses></AllClasses>
+      },
+    ]
   },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      // student users
+      {
+        path: 'mySelectClass',
+        element: <MySelectedClass></MySelectedClass>
+      },
+      {
+        path: 'myEnrolledClass',
+        element: <MyEnrolledClasses></MyEnrolledClasses>
+      },
+      {
+        path: 'manageClasses',
+        element: <ManageClasses></ManageClasses>
+      },
+      {
+        path: 'manageUsers',
+        element: <ManageUsers></ManageUsers>
+      }
+    ]
+  }
 ]);
 
 export default router;
