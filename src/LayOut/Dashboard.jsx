@@ -1,12 +1,12 @@
 import React from 'react';
 import { Outlet } from "react-router-dom";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content my-5 flex flex-col items-center justify-center">
         <Outlet></Outlet>
         <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden ">Open drawer</label>
       </div>
