@@ -16,18 +16,18 @@ const Dashboard = () => {
           {/* Sidebar content here */}
 
           <li> <NavLink to="/dashboard/mySelectClass"> My Selected classes </NavLink> </li>
-          <li> <Link to="/manageClasses"> My Enrolled classes </Link> </li>
+          <li> <NavLink to="/dashboard/myEnrolledClass"> My Enrolled classes </NavLink> </li>
 
           <div className='divider'></div>
 
-          <li> <Link to="/manageClasses"> Add A Class </Link> </li>
-          <li> <Link to="/manageClasses"> My Class </Link> </li>
-          <li> <Link to="/manageClasses"> Manage Classes </Link> </li>
+          <li> <NavLink to="/manageClasses"> Add A Class </NavLink> </li>
+          <li> <NavLink to="/manageClasses"> My Class </NavLink> </li>
+          <li> <NavLink to="/manageClasses"> Manage Classes </NavLink> </li>
 
           <div className='divider'></div>
 
-          <li> <Link to="/dashboard/manageClasses"> Manage Classes </Link> </li>
-          <li> <Link to="/dashboard/manageUsers"> Manage Users </Link> </li>
+          <li> <NavLink to="/dashboard/manageClasses"> Manage Classes </NavLink> </li>
+          <li> <NavLink to="/dashboard/manageUsers"> Manage Users </NavLink> </li>
 
         </ul>
       </div>

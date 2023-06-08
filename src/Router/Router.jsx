@@ -53,6 +53,10 @@ const router = createBrowserRouter([
         path: 'myEnrolledClass',
         element: <MyEnrolledClasses></MyEnrolledClasses>
       },
+// Instructors Route
+
+
+// Admin Route
       {
         path: 'manageClasses',
         element: <ManageClasses></ManageClasses>
