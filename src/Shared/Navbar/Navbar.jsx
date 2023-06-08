@@ -4,7 +4,7 @@ import useAuth from '../../Hooks/useAuth';
 import { FaUserCircle } from 'react-icons/fa';
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  console.log(user?.displayName);
+  // console.log(user?.displayName);
   const handleLogOut = () => {
     logOut()
       .then(() => { })
@@ -24,13 +24,10 @@ const Navbar = () => {
   <div className="badge badge-secondary">+{cart?.length || 0}</div>
 </button></NavLink> </li> */}
 
-
 {user ? <> <button onClick={handleLogOut} className='btn btn-ghost'>Logout</button> </> :
       <><li><NavLink to='/login'>Login</NavLink ></li>
       </>
-    }
-
-    
+    } 
     <li><NavLink to='/register'>Register</NavLink ></li>
   </>
   return (

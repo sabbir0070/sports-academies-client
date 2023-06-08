@@ -16,7 +16,7 @@ fetch(`popularClass.js`).then(res=>res.json())
 </SectionTitle>
 <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8'>
       {
-popularClass.map(classes=><PopularClassCard key={classes.name} classes={classes}></PopularClassCard>)
+popularClass.map(classes=><PopularClassCard key={classes.email} classes={classes}></PopularClassCard>)
 }
     </div>
 </div>
