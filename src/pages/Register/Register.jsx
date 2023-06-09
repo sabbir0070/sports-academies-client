@@ -10,22 +10,35 @@ import Swal from 'sweetalert2';
 const Register = () => {
   const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
   const password = watch("password")
-  // console.log(password)
+
   const { createUser, updatePhoto } = useContext(AuthContext);
   const navigate = useNavigate()
   const onSubmit = (data) => {
     createUser(data.email, data.password)
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser)
+console.log(loggedUser);
         updatePhoto(data.name, data.photoURL).then(() => {
+          const saveUser = { name: data.name, email: data.email }
+          fetch(`http://localhost:4000/users`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json"
+            },
+            body: JSON.stringify(saveUser)
+          })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data.insertedId);
+            })
+          reset()
           Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Name And Photo Update Successful',
-          showConfirmButton: false,
-          timer: 1500
-        })
+            position: 'top-end',
+            icon: 'success',
+            title: 'Name And Photo Update Successful',
+            showConfirmButton: false,
+            timer: 1500
+          })
           navigate('/')
         })
           .catch(error => {

@@ -41,7 +41,7 @@ const Login = () => {
     signInUser(email, password)
       .then(result => {
         const user = result.user;
-console.log(user);
+        console.log(user);
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -83,7 +83,7 @@ console.log(user);
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
               </div>
-             
+
               {/* Todo make button disabled for captcha  */}
               <div className="form-control mt-6">
                 <input disabled={false} type="submit" className="btn btn-primary" value='Submit' />

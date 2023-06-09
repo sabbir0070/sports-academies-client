@@ -73,6 +73,7 @@ const MySelectedClass = () => {
               <th>Seats</th>
               <th>Price</th>
               <th>Delete</th>
+              <th>Payment</th>
             </tr>
           </thead>
           <tbody>
