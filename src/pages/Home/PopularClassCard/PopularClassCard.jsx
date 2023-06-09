@@ -1,17 +1,17 @@
 import React from 'react';
 
 const PopularClassCard = ({classes}) => {
-const {Name,Image,Instructor,Seats,Price} = classes;
+const {name,image,instructor,seats,price} = classes;
 return (   
 <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
-    <img src={Image} alt="Shoes" className="rounded-xl transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
+    <img src={image} alt="Shoes" className="rounded-xl transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">Name:{Name}</h2>
-   <p> Instructor: {Instructor}.</p>
-    <p>Seats: {Seats}.</p>
-    <p> Price: {Price}.</p>
+    <h2 className="card-title">Name:{name}</h2>
+   <p> Instructor: {instructor}.</p>
+    <p>Seats: {seats}.</p>
+    <p> Price: {price}.</p>
     <div className="card-actions">
       <button className="btn btn-primary">Select</button>
     </div>
