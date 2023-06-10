@@ -1,11 +1,10 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa';
 
-const MySelectClassRow = ({ index, handleDelete, selectClass }) => {
-  const { image, email, name, instructor, seats, _id, price } = selectClass;
-  // console.log(selectClass);  
-  return (
-    <>
+const MyClassCard = ({myClass,index,handleDelete}) => {
+const {_id,name,email,instructor,image,seats,price,status,} = myClass
+ return (
+     <>
       <tr>
         <th className='text-black bold'>
           {index + 1}
@@ -24,15 +23,15 @@ const MySelectClassRow = ({ index, handleDelete, selectClass }) => {
         <td>{email}</td>
         <td>{seats}</td>
         <td>{price}</td>
+        <td>{status}</td>
+        <td>Total Enrolled</td>
+        <td>Feedback</td>
         <th>
           <button onClick={() => handleDelete(_id)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button>
-        </th>
-        <th>
-          <button className='btn btn-primary btn-sm hover:bg-green-500'>Payment</button>
         </th>
       </tr>
     </>
   );
 };
 
-export default MySelectClassRow;
+export default MyClassCard;

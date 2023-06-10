@@ -38,9 +38,10 @@ const Dashboard = () => {
               <li> <NavLink to="/dashboard/myClass"> My Class </NavLink> </li>
             </> : <>
               <li> <NavLink to="/">User Home </NavLink> </li>
-              <li> <NavLink to="/dashboard/payment"> Payment </NavLink> </li>
               <li> <NavLink to="/dashboard/mySelectClass"> My Selected classes </NavLink> </li>
               <li> <NavLink to="/dashboard/myEnrolledClass"> My Enrolled classes </NavLink> </li>
+              <li> <NavLink to="/dashboard/payment"> Payment </NavLink> </li>
+              <li> <NavLink to="/dashboard/payment"> Payment History </NavLink> </li>
             </>
           }
 

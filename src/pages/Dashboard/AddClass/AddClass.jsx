@@ -32,7 +32,8 @@ body:JSON.stringify(newClass)
 })
 .then(res=>res.json())
 .then(data=>{
-  if(data.data.insertedId){
+console.log(data);
+  if(data?.data?.insertedId){
   reset();
   Swal.fire({
     position: 'top-end',

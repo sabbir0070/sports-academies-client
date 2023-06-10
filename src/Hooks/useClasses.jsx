@@ -2,16 +2,17 @@ import { useQuery } from '@tanstack/react-query'
 import useAuth from './useAuth';
 
 const useClasses = () => {
-const {user} = useAuth();
+  const { user, loading } = useAuth();
 
-const { refetch,isLoading, isError, data:classes=[], error } = useQuery({
+  const {  data: classes = [],refetch } = useQuery({
     queryKey: ['classes'],
-    queryFn: async ()=>{
-const res = await fetch(`http://localhost:4000/allClasses`);
-return res.json();
-} ,
+    enabled: !loading,
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:4000/allClasses`);
+      return res.json();
+    },
   })
-return [classes,refetch]
+  return [classes, refetch]
 };
 
 export default useClasses;

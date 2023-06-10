@@ -1,8 +1,10 @@
 import React from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../Hooks/UseAxiosSecure';
 
 const SocialLogin = () => {
+const [axiosSecure] = useAxiosSecure();
   const { googleSignIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,7 +20,8 @@ const SocialLogin = () => {
             "content-type": "application/json"
           },
           body: JSON.stringify(saveUser)
-        })
+      //  axiosSecure.post('/users',saveUser) 
+})
           .then(res => res.json())
           .then(() => {
              navigate(from, { replace: true })
