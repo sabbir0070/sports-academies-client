@@ -73,7 +73,7 @@ async function run() {
       next();
     };
 
-    // 
+    // verify instructor
     const verifyInstructor = async (req, res, next) => {
       const email = req.decoded.email;
       const query = { email: email };
