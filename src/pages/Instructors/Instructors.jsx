@@ -1,9 +1,17 @@
 import React from 'react';
-import useInstructors from '../../Hooks/useInstructors';
+import { useQuery } from '@tanstack/react-query'
 import InstructorsCard from '../InstructorsCard/InstructorsCard';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const Instructors = () => {
-  const [instructors] = useInstructors();
+const [axiosSecure] = useAxiosSecure();
+  const { data:instructors=[], error } = useQuery({
+    queryKey: ['classes'],
+    queryFn: async ()=>{
+const res = await axiosSecure.get(`/allInstructor`);
+return res.json();
+} ,
+  })
 console.log(instructors);
   return (
     <div className='my-10'>

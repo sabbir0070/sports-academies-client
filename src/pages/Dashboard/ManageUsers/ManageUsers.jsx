@@ -62,6 +62,26 @@ Swal.fire({
 }
 })
 }
+
+const handleMakeInstructor = (user) =>{
+fetch(`http://localhost:4000/users/instructor/${user._id}`,{
+method:"PATCH"
+})
+.then(res=>res.json())
+.then(data=>{
+console.log(data);
+if(data?.modifiedCount){
+refetch();
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: `${user.name} is an instructor now`,
+  showConfirmButton: false,
+  timer: 1500
+})
+}
+})
+}
   return (
     <div>
       <h2>Total Users: {users.length} </h2>
@@ -75,7 +95,6 @@ Swal.fire({
         <th>Email</th>
         <th>Role</th>
         <th>Make Instructor</th>
-        <th>Make Admin</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -85,9 +104,9 @@ users.map((user,index)=> <tr key={user._id} >
         <th>{index + 1}</th>
         <td>{user?.name}</td>
         <td>{user?.email}</td>
-        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button onClick={()=> handleMakeAdmin(user)} className='btn btn-primary btn-sm'>user</button></>}</td>
-        <td>{user.role === 'instructor'? 'instructor': 'i'}</td>
-        <td>Make Admin</td>
+        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button onClick={()=> handleMakeAdmin(user)} className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
+        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button onClick={()=> handleMakeInstructor(user)} className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
+      
         <td>  <button onClick={() => handleDelete(user)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button> </td>
       </tr>)
 }

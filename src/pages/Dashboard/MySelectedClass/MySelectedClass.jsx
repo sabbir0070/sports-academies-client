@@ -1,5 +1,5 @@
 // import { useQuery } from '@tanstack/react-query'
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import MySelectClassRow from '../MySelectClassRow/MySelectClassRow';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
@@ -10,14 +10,7 @@ const MySelectedClass = () => {
   const { user } = useAuth();
   const [selectedClass, refetch,isLoading] = useSelectCart();
   console.log(selectedClass);
-  const total = selectedClass.reduce((sum, clases) => clases.price + sum, 0);
-  // useEffect(() => {
-  //   fetch(`http://localhost:4000/selectClass?email=${user?.email}`).then(res => res.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setSelectedClass(data)
-  //     })
-  // }, [])
+  const total = selectedClass?.reduce((sum, clases) => clases.price + sum, 0);
 
   const handleDelete = id => {
     console.log(id);
@@ -56,7 +49,7 @@ const MySelectedClass = () => {
     <div className='w-full bg-gray-300 px-4 pt-4 pb-20 text-white mt-5'>
       <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle>
       <div className='flex uppercase gap-10 justify-between items-center'>
-        <h2 className='font-semibold  text-xl'>Total Selected Class: {selectedClass.length}</h2>
+        <h2 className='font-semibold  text-xl'>Total Selected Class: {selectedClass?.length}</h2>
         <h2 className='font-semibold text-xl'>Total Price: $ {total}</h2>
         <button className="btn btn-sm bg-pink-500 text-white font-semibold">Payment</button>
       </div>
