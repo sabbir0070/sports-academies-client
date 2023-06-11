@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MySelectClassRow = ({ index, handleDelete, selectClass }) => {
   const { image, email, name, instructor, seats, _id, price } = selectClass;
@@ -28,7 +29,7 @@ const MySelectClassRow = ({ index, handleDelete, selectClass }) => {
           <button onClick={() => handleDelete(_id)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button>
         </th>
         <th>
-          <button className='btn btn-primary btn-sm hover:bg-green-500'>Payment</button>
+         <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-primary btn-sm hover:bg-green-500'>Payment</button> </Link> 
         </th>
       </tr>
     </>

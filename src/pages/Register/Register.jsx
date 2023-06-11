@@ -59,7 +59,7 @@ console.log(loggedUser);
           <div className="text-center w-1/2 lg:text-left">
             <img src={RegisterImg} alt="w-full h-full" />
           </div>
-          <div className="w-1/2 h-full shadow-2xl bg-base-100">
+          <div className="w-1/2  shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">

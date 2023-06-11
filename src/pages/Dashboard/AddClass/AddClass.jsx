@@ -21,7 +21,15 @@ const {user} = useAuth();
   if(imgResponse.success){
   const  imgURL = imgResponse.data.display_url;
   const {name, instructor, email, price, seats} = data;
-  const newClass ={name,instructor,email, price: parseFloat(price), seats: parseFloat(seats),image:imgURL, status:'pending'} 
+  const newClass ={name,
+instructor,
+email,
+ price: parseFloat(price),
+ seats: parseFloat(seats),
+image:imgURL,
+student: 0,
+ status:'pending'
+} 
 
 fetch(`http://localhost:4000/addClass`,{
 method:"POST",

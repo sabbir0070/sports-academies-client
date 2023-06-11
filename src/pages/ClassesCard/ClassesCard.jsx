@@ -69,13 +69,33 @@ const ClassesCard = ({ singleClass }) => {
         <p>Seats: {seats}.</p>
         <p> Price: {price}.</p>
         <div className="card-actions">
-          {
+          {/* {
             isAdmin ?
               <><button onClick={handleAddClass} className="btn btn-primary" disabled >Select</button> </>
               : isInstructor ?
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled>Select</button></> :
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled={disabled}>Select</button></>
-          }
+          } */}
+{isAdmin || isInstructor || seats === 0 ? (
+            <>
+              <button
+                disabled
+                onClick={handleAddClass}
+                className='btn btn-primary hover:bg-[#b31409] hover:text-white border-0'
+              >
+                Select
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={handleAddClass}
+                className='btn btn-primary  hover:bg-[#4507d6] hover:text-white border-0'
+              >
+                Select
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
