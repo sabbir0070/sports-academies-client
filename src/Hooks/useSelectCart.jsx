@@ -16,7 +16,6 @@ const res = await axiosSecure(`/selectClass?email=${user?.email}`)
 console.log('res from axios',res);
 return res.data;
 }
-
 })
 return [selectedClass,refetch,isLoading]
 };

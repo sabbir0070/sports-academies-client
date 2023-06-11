@@ -1,7 +1,8 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query'
 import InstructorsCard from '../InstructorsCard/InstructorsCard';
-import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import useAxiosSecure from '../../Hooks/UseAxiosSecure';
+
 
 const Instructors = () => {
 const [axiosSecure] = useAxiosSecure();

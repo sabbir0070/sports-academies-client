@@ -61,13 +61,10 @@ const ManageClassTable = ({ index, singleClass }) => {
               disabled={
                 status === "deny" || status === "approved"
               }
-              onClick={() => handleStatus(singleClass, "approved")}
+              onClick={() => handleStatus(singleClass, "deny")}
               className='btn btn-primary btn-sm hover:bg-orange-500'>Deny</button>
           </td> </>}
         <td>Feedback</td>
-        <th>
-          {/* <button onClick={() => handleDelete(_id)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button> */}
-        </th>
       </tr>
     </>
   );
