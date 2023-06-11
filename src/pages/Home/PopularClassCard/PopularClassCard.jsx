@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PopularClassCard = ({classes}) => {
-const {name,image,instructor,seats,price} = classes;
+const {name,image,instructor,seats,price,student} = classes;
 return (   
 <div className="card w-96 bg-base-100 shadow-xl">
   <figure className="px-10 pt-10">
@@ -11,6 +11,7 @@ return (
     <h2 className="card-title">Name:{name}</h2>
    <p> Instructor: {instructor}.</p>
     <p>Seats: {seats}.</p>
+    <p>Enroll Student: {student}.</p>
     <p> Price: {price}.</p>
     <div className="card-actions">
       <button className="btn btn-primary">Select</button>

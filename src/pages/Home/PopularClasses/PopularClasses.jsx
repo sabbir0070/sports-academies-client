@@ -5,7 +5,8 @@ import SectionTitle from '../../../Component/SectionTitle';
 const PopularClasses = () => {
 const [popularClass,setPopularClass] = useState([]);
 useEffect(()=>{
-fetch(`popularClass.js`).then(res=>res.json())
+fetch(`http://localhost:4000/popularClass`)
+.then(res=>res.json())
 .then(data=>setPopularClass(data))
 
 },[])

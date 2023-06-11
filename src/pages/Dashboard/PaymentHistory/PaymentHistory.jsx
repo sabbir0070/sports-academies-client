@@ -1,9 +1,13 @@
-import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
+
+import { useQuery } from "@tanstack/react-query";
+import useAuth from "../../../Hooks/useAuth";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import PaymentHistoryCard from "./PaymentHistoryCard";
 
 const PaymentHistory = () => {
   const { loading,user } = useAuth();
-  const [axiosSecure] = useAxiosSecure();
-  const { data: payments= [], error } = useQuery({
+  const [axiosSecure] = useAxiosSecure()
+  const { data: payments= [], } = useQuery({
     queryKey: ['payments'],
     enabled: !loading,
     queryFn: async () => {
