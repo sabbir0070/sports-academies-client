@@ -23,7 +23,22 @@ const Navbar = () => {
   <FaShoppingCart></FaShoppingCart>
   <div className="badge badge-secondary">+{cart?.length || 0}</div>
 </button></NavLink> </li> */}
-
+ {/* {user && (
+        <li>
+          <ActiveLink
+            to={
+              isAdmin
+                ? "/dashboard/manageClasses"
+                : isInstructor
+                ? "/dashboard/addClass"
+                : "/dashboard/mySelectedClasses"
+            }
+            className={`${darkTheme ? "text-white" : "text-gray-600"}`}
+          >
+            DashBoard
+          </ActiveLink>
+        </li>
+      )} */}
 {user ? <> <button onClick={handleLogOut} className='btn btn-ghost'>Logout</button> </> :
       <><li><NavLink to='/login'>Login</NavLink ></li>
       </>

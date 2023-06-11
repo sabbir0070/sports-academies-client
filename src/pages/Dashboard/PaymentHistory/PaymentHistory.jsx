@@ -1,8 +1,4 @@
-import React from 'react';
-import useAxiosSecure from '../../../Hooks/UseAxiosSecure';
-import { useQuery } from '@tanstack/react-query';
-import useAuth from '../../../Hooks/useAuth';
-import PaymentHistoryCard from './PaymentHistoryCard';
+import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
 
 const PaymentHistory = () => {
   const { loading,user } = useAuth();
@@ -15,8 +11,7 @@ const PaymentHistory = () => {
       return res.data;
     },
   })
-  console.log(payments);
-
+   
   return (
     <div>
       <h2 className='text-center text-3xl my-4  text-blue-800'> Payment History  </h2>

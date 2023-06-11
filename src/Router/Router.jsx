@@ -18,12 +18,14 @@ import AdminRoute from "../PrivateRoute/AdminRoute";
 import InstructorRoute from "../PrivateRoute/InstructorRoute";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import NotFound from "../Shared/NotFound/NotFound";
 // import Payment from "../pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: '/',
@@ -45,11 +47,16 @@ const router = createBrowserRouter([
         path: 'allClasses',
         element: <AllClasses></AllClasses>
       },
+      {
+        path: '*',
+        element: <NotFound></NotFound>
+      }
     ]
   },
   {
     path: '/dashboard',
     element: <DashboardLayout></DashboardLayout>,
+    errorElement: <NotFound></NotFound>,
     children: [
       // student users
       {
@@ -89,7 +96,8 @@ const router = createBrowserRouter([
       {
         path: 'manageUsers',
         element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
-      }
+      },
+
     ]
   }
 ]);

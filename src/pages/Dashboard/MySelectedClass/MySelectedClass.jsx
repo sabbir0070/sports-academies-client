@@ -1,5 +1,4 @@
-// import { useQuery } from '@tanstack/react-query'
-// import React, { useEffect, useState } from 'react';
+
 import MySelectClassRow from '../MySelectClassRow/MySelectClassRow';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
@@ -9,8 +8,6 @@ import useSelectCart from '../../../Hooks/useSelectCart';
 const MySelectedClass = () => {
   const { user } = useAuth();
   const [selectedClass, refetch,isLoading] = useSelectCart();
-  console.log(selectedClass);
-  const total = selectedClass?.reduce((sum, clases) => clases.price + sum, 0);
 
   const handleDelete = id => {
     // console.log(id);

@@ -5,7 +5,7 @@ import useAxiosSecure from "../../../Hooks/UseAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 
 
-const CheckOutForm = ({ price, id, selectClassId }) => {
+const CheckOutForm = ({ price, id, selectClassId, name }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
@@ -72,6 +72,7 @@ const CheckOutForm = ({ price, id, selectClassId }) => {
       // save payment information to the server
       const payment = {
         id,
+        name,
         email: user?.email,
         transactionId: paymentIntent.id,
         price,
@@ -85,7 +86,7 @@ const CheckOutForm = ({ price, id, selectClassId }) => {
           method: "PATCH",
         })
           .then((res) => res.json())
-          .then((data) => {});
+          .then((data) => { });
 
         if (res.data.insertResult.insertedId) {
           // display confirm

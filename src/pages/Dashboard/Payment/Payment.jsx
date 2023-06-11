@@ -1,4 +1,5 @@
 
+
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckOutForm from '../CheckoutForm/CheckoutForm';
@@ -7,7 +8,6 @@ import SectionTitle from '../../../Component/SectionTitle';
 
 const Payment = () => {
   const selectClass = useLoaderData();
-  console.log(selectClass);
   const stripePromise = loadStripe(import.meta.env.VITE_payment_gateway_pk)
 
   return (
@@ -18,6 +18,7 @@ const Payment = () => {
       <Elements stripe={stripePromise}>
 
         <CheckOutForm
+          name ={selectClass.name}
           price={selectClass.price}
           id={selectClass._id}
           selectClassId={selectClass.selectClassId}
