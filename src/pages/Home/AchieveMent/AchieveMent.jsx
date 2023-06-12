@@ -11,7 +11,7 @@ const AchieveMent = () => {
   return (
     <div className="text-center max-w-screen-xl mx-auto mt-20">
       <Slide>
-        <h1 className="text-blue-400 font-bold text-2xl md:text-4xl text-center mb-3">~~ Our Achievement ~~</h1>
+        <h1 className="text-yellow-300 font-bold text-2xl md:text-4xl text-center mb-3">~~ Our Achievement ~~</h1>
       </Slide>
 
       <p className="text-gray-600 mb-8">If you want to learning best skill! join with us.</p>
