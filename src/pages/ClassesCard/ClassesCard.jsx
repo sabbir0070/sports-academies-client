@@ -59,7 +59,7 @@ const ClassesCard = ({ singleClass }) => {
   }
 
   return (
-    <div className="card lg:w-96 md:w-96 w-full bg-base-200 shadow-xl">
+    <div className={`card lg:w-96 md:w-96 w-full  shadow-xl ${seats === 0 ? 'bg-red-500': 'bg-base-200'}`}>
       <figure className="px-10 pt-10 h-60">
         <img src={image} alt="Shoes" className="rounded-xl h-full rounded-lg transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
       </figure>
