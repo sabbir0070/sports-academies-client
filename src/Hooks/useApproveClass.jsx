@@ -9,7 +9,7 @@ const useApproveClass = () => {
     queryKey: ['allApprovedClasses'],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch(`http://localhost:4000/allApprovedClasses`);
+      const res = await fetch(`https://sports-academies-server-nine.vercel.app/allApprovedClasses`);
       return res.json();
     },
   })

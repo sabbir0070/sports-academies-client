@@ -82,7 +82,7 @@ const CheckOutForm = ({ price, id, selectClassId, name }) => {
 
       axiosSecure.post("/payments", payment).then((res) => {
         console.log(res.data);
-        fetch(`http://localhost:4000/all-classes/seats/${selectClassId}`, {
+        fetch(`https://sports-academies-server-nine.vercel.app/all-classes/seats/${selectClassId}`, {
           method: "PATCH",
         })
           .then((res) => res.json())

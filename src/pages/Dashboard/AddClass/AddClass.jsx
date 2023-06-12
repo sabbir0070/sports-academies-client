@@ -31,7 +31,7 @@ student: 0,
  status:'pending'
 } 
 
-fetch(`http://localhost:4000/addClass`,{
+fetch(`https://sports-academies-server-nine.vercel.app/addClass`,{
 method:"POST",
 headers:{
 "content-type":"application/json"

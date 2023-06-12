@@ -5,7 +5,7 @@ import PopularInstructorCard from '../Home/PopularInstructorCard/PopularInstruct
 const PopularInstructor = () => {
 const [PopularInstructor, setPopularInstructor] = useState([]);
 useEffect(()=>{
-fetch(`http://localhost:4000/popularInstructors/${'instructor'}`).then(res=>res.json())
+fetch(`https://sports-academies-server-nine.vercel.app/popularInstructors/${'instructor'}`).then(res=>res.json())
 .then(data=>{
 setPopularInstructor(data)})
 },[])

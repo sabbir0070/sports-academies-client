@@ -20,7 +20,7 @@ const Register = () => {
 
         updatePhoto(data.name, data.photoURL).then((result) => {
           const saveUser = { name: data.name, email: data.email, image: data.photoURL }
-          fetch(`http://localhost:4000/users`, {
+          fetch(`https://sports-academies-server-nine.vercel.app/users`, {
             method: "POST",
             headers: {
               "content-type": "application/json"

@@ -21,7 +21,7 @@ const ClassesCard = ({ singleClass }) => {
 
     if (user && user.email) {
       const selectClasses = { selectClassId: _id, name, image, instructor, seats, price, email: user?.email }
-      fetch('http://localhost:4000/selectClass', {
+      fetch('https://sports-academies-server-nine.vercel.app/selectClass', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

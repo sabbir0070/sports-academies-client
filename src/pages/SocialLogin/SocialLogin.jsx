@@ -14,7 +14,7 @@ const [axiosSecure] = useAxiosSecure();
       .then((result) => {
         const loggedUser = result.user;
         const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
-        fetch(`http://localhost:4000/users`, {
+        fetch(`https://sports-academies-server-nine.vercel.app/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json"

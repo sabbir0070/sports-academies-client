@@ -23,7 +23,7 @@ return [selectedClass,refetch,isLoading]
 export default useSelectCart;
 
 // queryFn: async ()=>{
-// const res = await fetch (`http://localhost:4000/selectClass?email=${user?.email}`,{
+// const res = await fetch (`https://sports-academies-server-nine.vercel.app/selectClass?email=${user?.email}`,{
 // headers:{
 // authorization:`bearer ${token}`
 // }

@@ -27,7 +27,7 @@ const [modalOpen, setModalOpen] = useState(false);
           };
         
        console.log(feedback)
-       fetch(`http://localhost:4000/addClasses/${_id}`, {
+       fetch(`https://sports-academies-server-nine.vercel.app/addClasses/${_id}`, {
         method: 'PUT',
         headers: {
           'content-type': 'application/json'
@@ -53,7 +53,7 @@ const [modalOpen, setModalOpen] = useState(false);
 
 
  const handleStatus = (singleClass, status) => {
-    fetch(`http://localhost:4000/classes/${singleClass._id}/?status=${status}`, {
+    fetch(`https://sports-academies-server-nine.vercel.app/classes/${singleClass._id}/?status=${status}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
