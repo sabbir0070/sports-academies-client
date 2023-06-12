@@ -107,7 +107,7 @@ export default MyClass;
 //     const total = classes.reduce((sum, clases) => clases.price + sum, 0);
 
 //     useEffect(() => {
-//         fetch(`http://localhost:5000/selectClass?email=${user.email}`)
+//         fetch(`https://sports-academies-server-nine.vercel.app/selectClass?email=${user.email}`)
 //             .then(res => res.json())
 //             .then(data => setClasses(data))
 //     }, [])
@@ -123,7 +123,7 @@ export default MyClass;
 //             confirmButtonText: 'Yes, delete it!'
 //         }).then((result) => {
 //             if (result.isConfirmed) {
-//                 fetch(`http://localhost:5000/selectClass/${id}`, {
+//                 fetch(`https://sports-academies-server-nine.vercel.app/selectClass/${id}`, {
 //                     method: 'DELETE'
 //                 })
 //                     .then(res => res.json())

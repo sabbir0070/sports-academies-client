@@ -5,7 +5,7 @@ import SectionTitle from '../../../Component/SectionTitle';
 const PopularClasses = () => {
 const [popularClass,setPopularClass] = useState([]);
 useEffect(()=>{
-fetch(`https://sports-academies-server-nine.vercel.app/popularClass/${"approved"}`)
+fetch(`https://sports-academies-server-nine.vercel.app/popularClass/approved`)
 .then(res=>res.json())
 .then(data=>setPopularClass(data))
 
@@ -15,7 +15,7 @@ fetch(`https://sports-academies-server-nine.vercel.app/popularClass/${"approved"
 <SectionTitle heading='Popular Classes' subHeading="Popular Class Information">
 
 </SectionTitle>
-<div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8'>
+<div className='grid grid-cols-1  md:grid-cols-3   lg:grid-cols-3 gap-8  mx-auto  xs:w-xl sm:w-xl xs:w-full md:max-w-full lg:max-w-screen-xl'>
       {
 popularClass.map(classes=><PopularClassCard key={classes._id} classes={classes}></PopularClassCard>)
 }

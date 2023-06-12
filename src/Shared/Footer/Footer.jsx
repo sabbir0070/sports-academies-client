@@ -4,7 +4,7 @@ import { FaBook, FaCalculator, FaCarAlt, FaFacebook, FaGoogle, FaInstagram, FaLi
 
 const Footer = () => {
   return (
-    <div className='mb-10 bg-black h-66'>
+    <div className='mb-10 bg-black h-66 xs:w-xl sm:w-xl xs:w-full md:max-w-full lg:max-w-screen-xl '>
 {/* <h3 className='font-bold hover:text-white text-5xl text-center pt-5 text-green-200'>Toy</h3>
 <h2 className='font-bold hover:text-white text-5xl text-center pt-5 text-green-200'>High Quality Car Toy Product Available </h2> */}
   <footer className="footer  p-10 bg-black text-white">

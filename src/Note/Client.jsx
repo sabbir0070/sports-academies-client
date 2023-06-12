@@ -12,7 +12,7 @@ const ManageUsers = () => {
 
   const handleMakeAdmin = (user) => {
     fetch(
-      http://localhost:5000/users/admin/${user._id},
+      https://sports-academies-server-nine.vercel.app/users/admin/${user._id},
       {
         method: "PATCH",
       }
@@ -35,7 +35,7 @@ const ManageUsers = () => {
 
   const handleMakeInstructor = (user) => {
     fetch(
-      http://localhost:5000/users/instructor/${user._id},
+      https://sports-academies-server-nine.vercel.app/users/instructor/${user._id},
       {
         method: "PATCH",
       }

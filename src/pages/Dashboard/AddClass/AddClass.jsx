@@ -139,7 +139,7 @@ export default AddClass;
 //         console.log(clas)
 //         if(user && user.email){
 //             const selecClasses = {selecClassId: _id, name, image, instructor, seats, price, email: user.email}
-//             fetch('http://localhost:5000/selectClass', {
+//             fetch('https://sports-academies-server-nine.vercel.app/selectClass', {
 //                 method: 'POST',
 //                headers: {
 //                 'content-type' : 'application/json'

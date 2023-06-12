@@ -1,22 +1,22 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query'
 import InstructorsCard from '../InstructorsCard/InstructorsCard';
-import useAxiosSecure from '../../Hooks/UseAxiosSecure';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 
 const Instructors = () => {
-const [axiosSecure] = useAxiosSecure();
-  const { data:instructors=[]} = useQuery({
+  const [axiosSecure] = useAxiosSecure();
+  const { data: instructors = [] } = useQuery({
     queryKey: ['instructors'],
-    queryFn: async ()=>{
-const res = await axiosSecure.get(`/allInstructors/${'instructor'}`);
-return res.data;
-} ,
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/allInstructors/instructor`);
+      return res.data;
+    },
   })
-console.log(instructors);
+  console.log(instructors);
   return (
     <div className='my-10'>
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 xs:w-xl sm:w-xl xs:w-full md:max-w-full lg:max-w-screen-xl'>
         {
           instructors.map(instructor => <InstructorsCard instructor={instructor} key={instructor._id}></InstructorsCard>)
         }

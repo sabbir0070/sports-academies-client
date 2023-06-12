@@ -21,8 +21,8 @@ console.log(enrollStudent);
 
   return (
   <div className='w-full bg-gray-300 px-4 pt-4 pb-20 text-black mt-5'>
-      <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle>
-        <h2 className='font-semibold  text-center text-xl'>Total Selected Class: {enrollStudent?.length}</h2>
+      <SectionTitle subheading="Class Show Now" heading="All Enrolled Class"></SectionTitle>
+        <h2 className='font-semibold  text-center text-xl'>Total Enrolled Class: {enrollStudent?.length}</h2>
       <div className="overflow-x-auto mt-9 text-center">
         <table className="table border rounded">
           {/* head */}

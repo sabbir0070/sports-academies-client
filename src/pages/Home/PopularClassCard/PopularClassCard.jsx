@@ -3,7 +3,7 @@ import React from 'react';
 const PopularClassCard = ({ classes }) => {
   const { name, image, instructor, seats, price, student } = classes;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card lg:w-96 md:w-96 w-full bg-base-100 shadow-xl">
       <figure className="px-10 pt-10 h-60">
         <img src={image} alt="Shoes" className="rounded-xl h-full transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
       </figure>
