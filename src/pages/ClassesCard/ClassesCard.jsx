@@ -4,9 +4,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAdmin from '../../Hooks/useAdmin';
 import useInstructor from '../../Hooks/useInstructor';
+import { Slide } from 'react-awesome-reveal';
 
 const ClassesCard = ({ singleClass }) => {
-  const { _id, name, image,student, instructor, seats, price } = singleClass;
+  const { _id, name, image, student, instructor, seats, price } = singleClass;
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -59,48 +60,50 @@ const ClassesCard = ({ singleClass }) => {
   }
 
   return (
-    <div className={`card lg:w-96 md:w-96 w-full  shadow-xl ${seats === 0 ? 'bg-red-500': 'bg-base-200'}`}>
+    <div className={`card lg:w-96 md:w-96 w-full  shadow-xl ${seats === 0 ? 'bg-red-500' : 'bg-base-200'}`}>
       <figure className="px-10 pt-10 h-60">
-        <img src={image} alt="Shoes" className="rounded-xl h-full rounded-lg transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
+        <img src={image} alt="Shoes" className="rounded-xl h-full  transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
       </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">Class Name:{name}</h2>
-        <p> Instructor: {instructor}.</p>
-        <p>Enrolled Student: {student}.</p>
-        <div className='flex gap-3'>
-          <p>Seats: {seats}.</p>
-          <p> Price: {price}.</p>
-        </div>
-        <div className="card-actions">
-          {/* {
+      <Slide>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title">Class Name:{name}</h2>
+          <p> Instructor: {instructor}.</p>
+          <p>Enrolled Student: {student}.</p>
+          <div className='flex gap-3'>
+            <p>Seats: {seats}.</p>
+            <p> Price: {price}.</p>
+          </div>
+          <div className="card-actions">
+            {/* {
             isAdmin ?
               <><button onClick={handleAddClass} className="btn btn-primary" disabled >Select</button> </>
               : isInstructor ?
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled>Select</button></> :
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled={disabled}>Select</button></>
           } */}
-          {isAdmin || isInstructor || seats === 0 ? (
-            <>
-              <button
-                disabled
-                onClick={handleAddClass}
-                className='btn btn-primary hover:bg-[#b31409] hover:text-white border-0'
-              >
-                Select
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={handleAddClass}
-                className='btn btn-primary  hover:bg-[#4507d6] hover:text-white border-0'
-              >
-                Select
-              </button>
-            </>
-          )}
+            {isAdmin || isInstructor || seats === 0 ? (
+              <>
+                <button
+                  disabled
+                  onClick={handleAddClass}
+                  className='btn btn-primary hover:bg-[#b31409] hover:text-white border-0'
+                >
+                  Select
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={handleAddClass}
+                  className='btn btn-primary  hover:bg-[#4507d6] hover:text-white border-0'
+                >
+                  Select
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </Slide>
     </div>
   );
 };
