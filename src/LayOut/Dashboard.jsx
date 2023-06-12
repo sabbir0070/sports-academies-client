@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
 import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
-import { FaBook, FaBookOpen, FaBookmark, FaCarAlt, FaDollarSign, FaHome, FaUser, FaUserAlt, FaUserCircle, } from 'react-icons/fa';
+import { FaBook, FaBookOpen, FaBookmark, FaDollarSign, FaHome, FaUser, FaUserAlt, FaUserCircle, } from 'react-icons/fa';
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
@@ -33,7 +33,7 @@ const Dashboard = () => {
               <li> <NavLink to="/dashboard/addClass"> <FaBookmark className='w-6 h-6'></FaBookmark> Add A Class </NavLink> </li>
               <li> <NavLink to="/dashboard/myClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Class </NavLink> </li>
             </> : <>
-              <li> <NavLink to="/dashboard/mySelectClass"> <FaCarAlt className='w-6 h-6'></FaCarAlt> My Selected classes </NavLink> </li>
+              <li> <NavLink to="/dashboard/mySelectClass"> <FaBookmark className='w-6 h-6'></FaBookmark> My Selected classes </NavLink> </li>
               <li> <NavLink to="/dashboard/myEnrolledClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Enrolled classes </NavLink> </li>
               <li> <NavLink to="/dashboard/paymentHistory"> <FaDollarSign className='w-6 h-6'></FaDollarSign> Payment History </NavLink> </li>
             </>

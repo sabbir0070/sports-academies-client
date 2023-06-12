@@ -12,13 +12,12 @@ const Payment = () => {
 
   return (
     <div className=''>
-      <SectionTitle subHeading="please provide" heading="Payment">
-</SectionTitle>
-      <h2 className='text-center'>takar hisab korte tako</h2>
+      <SectionTitle heading=" Please provide Payment">
+      </SectionTitle>
       <Elements stripe={stripePromise}>
 
         <CheckOutForm
-          name ={selectClass.name}
+          name={selectClass.name}
           price={selectClass.price}
           id={selectClass._id}
           selectClassId={selectClass.selectClassId}

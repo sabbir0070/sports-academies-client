@@ -98,7 +98,7 @@ const CheckOutForm = ({ price, id, selectClassId, name }) => {
     }
   };
   return (
-    <div className='mb-20'>
+    <div className='mb-20 border border-blue-600 p-6 bg-blue-600'>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
