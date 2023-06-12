@@ -14,12 +14,12 @@ const Register = () => {
   const { createUser, updatePhoto } = useContext(AuthContext);
   const navigate = useNavigate()
   const onSubmit = (data) => {
+    console.log(data.photoURL);
     createUser(data.email, data.password)
       .then(result => {
-        const loggedUser = result.user;
-console.log(loggedUser);
-        updatePhoto(data.name, data.photoURL).then(() => {
-          const saveUser = { name: data.name, email: data.email }
+
+        updatePhoto(data.name, data.photoURL).then((result) => {
+          const saveUser = { name: data.name, email: data.email, image: data.photoURL }
           fetch(`http://localhost:4000/users`, {
             method: "POST",
             headers: {

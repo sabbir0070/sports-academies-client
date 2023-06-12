@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import { FaUserCircle } from 'react-icons/fa';
 import useAdmin from '../../Hooks/useAdmin';
 import useInstructor from '../../Hooks/useInstructor';
 const Navbar = () => {
@@ -20,7 +19,10 @@ const Navbar = () => {
     <li><NavLink to='/'>Home</NavLink ></li>
     <li><NavLink to='/instructors'>Instructors</NavLink ></li>
     <li><NavLink to='/allClasses'>Classes</NavLink ></li>
-    {user && (
+{ user&&
+    <li><NavLink to='/dashboard'>Dashboard</NavLink ></li>
+}
+    {/* {user && (
       <li>
         <NavLink
           to={
@@ -34,7 +36,7 @@ const Navbar = () => {
           DashBoard
         </NavLink>
       </li>
-    )}
+    )} */}
 
   </>
 
@@ -100,7 +102,7 @@ const Navbar = () => {
             >
               Log Out
             </button>
-            <img
+            <img title={user.displayName}
               className="w-10 h-10 ml-2 rounded-full"
               src={user?.photoURL}
               alt=""

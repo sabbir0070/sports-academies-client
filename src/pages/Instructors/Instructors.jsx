@@ -6,17 +6,17 @@ import useAxiosSecure from '../../Hooks/UseAxiosSecure';
 
 const Instructors = () => {
 const [axiosSecure] = useAxiosSecure();
-  const { data:instructors=[], error } = useQuery({
-    queryKey: ['classes'],
+  const { data:instructors=[]} = useQuery({
+    queryKey: ['instructors'],
     queryFn: async ()=>{
-const res = await axiosSecure.get(`/allInstructor`);
-return res.json();
+const res = await axiosSecure.get(`/allInstructors/${'instructor'}`);
+return res.data;
 } ,
   })
 console.log(instructors);
   return (
     <div className='my-10'>
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10'>
         {
           instructors.map(instructor => <InstructorsCard instructor={instructor} key={instructor._id}></InstructorsCard>)
         }

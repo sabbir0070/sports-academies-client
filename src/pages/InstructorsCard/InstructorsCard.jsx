@@ -11,7 +11,7 @@ const {image,name,email} = instructor;
     <h2 className="card-title">Name: {name}</h2>
     <p>Email: {email}</p>
     <div className="card-actions">
-      <button className="btn btn-primary">See Classes</button>
+      <button className="btn btn-primary">Favorite</button>
     </div>
   </div>
 </div>
