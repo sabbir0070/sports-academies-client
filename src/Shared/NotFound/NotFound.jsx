@@ -10,9 +10,11 @@ const NotFound = () => {
   };
 
   return (
-    <div className="mt-20">
-        <img className="w-full mx-auto mb-3 md:w-80" src={notFoundPhoto} alt="" />
-      <h2 className="font-bold text-center text-red-700 text-7xl">404</h2>
+    <div className="mt-5 mb-20">
+       <div className=" w-60 mx-auto round-full">
+<iframe className="mx-auto w-full rounded-full" src="https://embed.lottiefiles.com/animation/81215"></iframe>
+</div>
+ <h2 className="font-bold text-center text-red-700 text-7xl">404</h2>
       <p className="my-3 text-xl font-semibold text-center text-amber-600">
         This Page Not Found
       </p>

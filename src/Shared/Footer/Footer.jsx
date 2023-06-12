@@ -14,10 +14,10 @@ const Footer = () => {
   </div> 
   <div>
     <span className=" text-2xl font-bold text-lime-500">SERVICES</span> 
-    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaCarAlt className='text-green-400 w-14 h-8'></FaCarAlt> Car Toys</a> 
-    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaCalculator className='text-blue-400 w-14 h-8'></FaCalculator> Remote Toys</a> 
-    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaMusic className='text-red-500 w-14 h-8'></FaMusic> Musical Toys</a> 
-    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaBook className='text--600 w-14 h-8'></FaBook> Learning Toys</a>
+    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaCarAlt className='text-green-400 w-14 h-8'></FaCarAlt>Learning  Cricket</a> 
+    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaCalculator className='text-blue-400 w-14 h-8'></FaCalculator>Learning  Football</a> 
+    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaMusic className='text-red-500 w-14 h-8'></FaMusic>Learning  Tennis</a> 
+    <a className="link link-hover flex gap-3 text-lg font-semibold items-center text-gray-200"> <FaBook className='text--600 w-14 h-8'></FaBook> Learning Hadudu</a>
   </div> 
 
 <div className='w-full'>
@@ -50,7 +50,7 @@ const Footer = () => {
  <div className='px-10 py-1 bg-black mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl'>
                 </div>
                 <div className='pb-10  block text-2xl text-center text-red-400 hover:text-red-500'>
-                    © 2023 copy right. All rights reserved car toys.
+                    © 2023 copy right. All rights reserved Sports Academies.
                 </div>
 
     </div>
