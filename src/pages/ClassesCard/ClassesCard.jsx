@@ -6,7 +6,7 @@ import useAdmin from '../../Hooks/useAdmin';
 import useInstructor from '../../Hooks/useInstructor';
 
 const ClassesCard = ({ singleClass }) => {
-  const { _id, name, image, instructor, seats, price } = singleClass;
+  const { _id, name, image,student, instructor, seats, price } = singleClass;
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,7 +17,7 @@ const ClassesCard = ({ singleClass }) => {
 
   const handleAddClass = add => {
 
-   setDisabled(true)   
+    setDisabled(true)
 
     if (user && user.email) {
       const selectClasses = { selectClassId: _id, name, image, instructor, seats, price, email: user?.email }
@@ -60,14 +60,17 @@ const ClassesCard = ({ singleClass }) => {
 
   return (
     <div className="card w-96 bg-base-200 shadow-xl">
-      <figure className="px-10 pt-10">
-        <img src={image} alt="Shoes" className="rounded-xl transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
+      <figure className="px-10 pt-10 h-60">
+        <img src={image} alt="Shoes" className="rounded-xl h-full rounded-lg transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">Name:{name}</h2>
+        <h2 className="card-title">Class Name:{name}</h2>
         <p> Instructor: {instructor}.</p>
-        <p>Seats: {seats}.</p>
-        <p> Price: {price}.</p>
+        <p>Enrolled Student: {student}.</p>
+        <div className='flex gap-3'>
+          <p>Seats: {seats}.</p>
+          <p> Price: {price}.</p>
+        </div>
         <div className="card-actions">
           {/* {
             isAdmin ?
@@ -76,7 +79,7 @@ const ClassesCard = ({ singleClass }) => {
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled>Select</button></> :
                 <><button onClick={handleAddClass} className="btn btn-primary" disabled={disabled}>Select</button></>
           } */}
-{isAdmin || isInstructor || seats === 0 ? (
+          {isAdmin || isInstructor || seats === 0 ? (
             <>
               <button
                 disabled

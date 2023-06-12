@@ -2,7 +2,6 @@ import React from 'react';
 import useClasses from '../../../Hooks/useClasses';
 import ManageClassTable from '../ManageClassTable/ManageClassTable';
 
-
 const ManageClasses = () => {
 const [classes] = useClasses();
 console.log(classes,44);

@@ -5,10 +5,6 @@ import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
 
 const Dashboard = () => {
-
-  //  const isAdmin =true;
-    // const isInstructor = true;
-  // TODO:load data from the server to have dynamic based
   const [isAdmin] = useAdmin();
   const [isInstructor] = useInstructor();
 
@@ -27,24 +23,24 @@ const Dashboard = () => {
           <div className='divider'></div>
           {
             isAdmin ? <>
-              <li> <NavLink to="/"> BackHome </NavLink> </li>
               <li> <NavLink to="/dashboard/adminHome"> AdminHome </NavLink> </li>
               <li> <NavLink to="/dashboard/manageClasses"> Manage Classes </NavLink> </li>
               <li> <NavLink to="/dashboard/manageUsers"> Manage Users </NavLink> </li>
+
             </> : isInstructor ? <>
-             {/*  */}
-              <li> <NavLink to="/">Back Home</NavLink> </li>
+              {/*  */}
               <li> <NavLink to="/dashboard/addClass"> Add A Class </NavLink> </li>
               <li> <NavLink to="/dashboard/myClass"> My Class </NavLink> </li>
             </> : <>
-              <li> <NavLink to="/">User Home </NavLink> </li>
               <li> <NavLink to="/dashboard/mySelectClass"> My Selected classes </NavLink> </li>
               <li> <NavLink to="/dashboard/myEnrolledClass"> My Enrolled classes </NavLink> </li>
               <li> <NavLink to="/dashboard/paymentHistory"> Payment History </NavLink> </li>
             </>
           }
-
           <div className='divider'></div>
+          <li> <NavLink to="/"> Home </NavLink> </li>
+          <li> <NavLink to="/allClasses"> All Classes</NavLink> </li>
+          <li> <NavLink to="/instructors"> All Instructors </NavLink> </li>
         </ul>
       </div>
     </div>

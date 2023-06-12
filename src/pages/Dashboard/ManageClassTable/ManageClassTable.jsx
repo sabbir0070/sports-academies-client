@@ -6,6 +6,7 @@ const ManageClassTable = ({ index, singleClass }) => {
   const { _id, name, email, instructor, image, seats, price, status, } = singleClass;
   console.log(singleClass);
   const [,refetch] = useClasses();
+
 // Feedback modal
 const showModal = () => {
         setModalOpen(true);
@@ -109,6 +110,7 @@ const [modalOpen, setModalOpen] = useState(false);
               className='btn btn-primary btn-sm hover:bg-orange-500'>Deny</button>
           </td> </>}
         <td>
+
 <button className="btn btn-xs" onClick={() => showModal(singleClass._id)}>open modal</button>
                     <dialog id={`my_modal_${singleClass._id}`} open={modalOpen} className="modal">
 

@@ -10,7 +10,7 @@ import img6 from "../../../assets/BannerImage/tennisjpg.jpg"
 
 const Banner = () => {
   return (
-    <div className='h-80 ' >
+    <div className=' ' >
  <Carousel autoPlay={Boolean}>
                 <div>
                     <img src={img1}/>
