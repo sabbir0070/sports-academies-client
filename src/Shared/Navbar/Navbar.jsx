@@ -7,6 +7,7 @@ import logo from '../../../src/assets/icon/headerIcon.jpg'
 const Navbar = () => {
     
   const { user, logOut } = useAuth();
+console.log(user);
   const isAdmin = useAdmin();
   const isInstructor = useInstructor();
   const handleLogOut = () => {
@@ -32,6 +33,16 @@ const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.
     document.querySelector('html').setAttribute('data-theme', localTheme)
   }, [theme,])
 
+
+  const navOptions = <>
+<ul className="menu menu-horizontal  px-1 mb-4 text-lg font-bold text-gray-700">
+    <li><NavLink to='/'>Home</NavLink ></li>
+    <li><NavLink to='/instructors'>Instructors</NavLink ></li>
+    <li><NavLink to='/allClasses'>Classes</NavLink ></li>
+    { user &&
+ <li> <NavLink to='/dashboard'> Dashboard </NavLink ></li>
+}
+
 {/* {user && (
       <li>
         <NavLink
@@ -39,7 +50,7 @@ const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.
             isAdmin
               ? "/dashboard/manageClasses"
               : isInstructor
-                ? "/dashboard/addClass"
+                ? "/dashboard/myClass"
                 : "/dashboard/mySelectClass"
           }
         >
@@ -47,15 +58,6 @@ const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.
         </NavLink>
       </li>
     )}  */}
-
-  const navOptions = <>
-<ul className="menu menu-horizontal  px-1 mb-4 text-lg font-bold text-gray-700">
-    <li><NavLink to='/'>Home</NavLink ></li>
-    <li><NavLink to='/instructors'>Instructors</NavLink ></li>
-    <li><NavLink to='/allClasses'>Classes</NavLink ></li>
-{ user&&
-    <li><NavLink to='/dashboard'>Dashboard</NavLink ></li>
-}
 
 {user ? <>
 
