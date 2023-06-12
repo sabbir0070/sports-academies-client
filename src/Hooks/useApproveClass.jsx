@@ -1,4 +1,4 @@
-import React from 'react';
+
 import useAuth from './useAuth';
 import { useQuery } from '@tanstack/react-query';
 
@@ -9,7 +9,7 @@ const useApproveClass = () => {
     queryKey: ['allApprovedClasses'],
     enabled: !loading,
     queryFn: async () => {
-      const res = await fetch(`https://sports-academies-server-nine.vercel.app/allApprovedClasses`);
+      const res = await fetch(`https://sports-academies-server-nine.vercel.app/allApprovedClasses/${"approved"}`);
       return res.json();
     },
   })

@@ -3,7 +3,6 @@ import { FaTrash } from 'react-icons/fa';
 
 const MyClassCard = ({myClass,index,handleDelete}) => {
 const {_id,name,email,instructor,image,student,feedback,seats,price,status,} = myClass;
-console.log(myClass?.feedback?.[0]);
  return (
      <>
       <tr>
