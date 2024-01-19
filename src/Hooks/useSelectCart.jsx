@@ -22,12 +22,3 @@ return [selectedClass,refetch,isLoading]
 
 export default useSelectCart;
 
-// queryFn: async ()=>{
-// const res = await fetch (`https://sports-academies-server-nine.vercel.app/selectClass?email=${user?.email}`,{
-// headers:{
-// authorization:`bearer ${token}`
-// }
-// })
-// return res.json();
-
-// }

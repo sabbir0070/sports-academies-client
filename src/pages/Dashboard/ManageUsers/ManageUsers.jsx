@@ -4,11 +4,22 @@ import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
-const {data:users=[], refetch} = useQuery(['users'], async()=>{
+const {data:users = [], refetch} = useQuery(['users'], async()=>{
 const res = await fetch('https://sports-academies-server-nine.vercel.app/users')
 return res.json();
 })
-console.log(users);
+
+// const {data: users=[],refetch} = useQuery(['users'],async()=>{
+// try{
+// const res = await fetch('https://sports-academies-server-nine.vercel.app/users');
+// return res.json();
+// } catch(error){
+// console.log('Error fetching users',error);
+// throw error;
+// }
+// })
+
+console.log(users,11);
 const handleDelete = (user) =>{
 console.log(user._id);
 Swal.fire({
@@ -84,7 +95,7 @@ Swal.fire({
 }
   return (
     <div>
-      <h2>Total Users: {users.length} </h2>
+      <h2>Total Users: {users?.length} </h2>
 <div className="overflow-x-auto">
   <table className="table table-zebra">
     {/* head */}
@@ -100,17 +111,16 @@ Swal.fire({
     </thead>
     <tbody>
    {
-users?.map((user,index)=> <tr key={user._id} >
+users?.map((user,index)=> <tr key={user?._id} >
         <th>{index + 1}</th>
         <td>{user?.name}</td>
         <td>{user?.email}</td>
-        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button onClick={()=> handleMakeAdmin(user)}  className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
-        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button onClick={()=> handleMakeInstructor(user)}  className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
+        <td>{user?.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button onClick={()=> handleMakeAdmin(user)}  className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
+        <td>{user?.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button onClick={()=> handleMakeInstructor(user)}  className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
       
         <td>  <button onClick={() => handleDelete(user)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button> </td>
       </tr>)
 }
-     
     </tbody>
   </table>
 </div>
